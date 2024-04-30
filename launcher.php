@@ -7,6 +7,13 @@
  
    get_header( );
 
+   // catching custom field values like Website name and description start
+   $website_name = get_post_meta(get_the_id(),"Website Name",true);
+   $website_description = get_post_meta(get_the_id(),"Website description",true);
+   // catching custom field values like Website name and description end
+
+
+
 ?>
 	<body <?php body_class( ); ?>>
 
@@ -26,8 +33,8 @@
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="fh5co-intro animate-box">
-									<h2>Launcher Launching Soon!</h2>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<h2> <?php echo esc_attr( $website_name ) ?> Launching Soon!</h2>
+									<p> <?php echo esc_attr( $website_description ) ?> </p>
 								</div>
 							</div>
 							

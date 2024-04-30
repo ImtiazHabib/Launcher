@@ -88,9 +88,11 @@
 	var countDown = function() {
 
 		simplyCountdown('.simply-countdown-one', {
-			year: "2018",
-			month: "05",
-			day: "30"
+			year: countdown.year,
+			month: countdown.month,
+			day: countdown.day,
+
+			
 		});
 
 	};
