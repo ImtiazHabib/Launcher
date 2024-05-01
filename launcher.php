@@ -4,7 +4,8 @@
 */
 ?>
 <?php
- 
+   
+   the_post();
    get_header( );
 
    // catching custom field values like Website name and description start
@@ -19,8 +20,8 @@
 
 	<div class="fh5co-loader"></div>
 
-	<aside id="fh5co-aside" role="sidebar" class="text-center" style="background-image: url(images/img_bg_1_gradient.jpg);">
-		<h1 id="fh5co-logo"><a href="index.html">launcher</a></h1>
+	<aside id="fh5co-aside" role="sidebar" class="text-center home_background">
+		<h1 id="fh5co-logo"><a href="<?php echo site_url( ); ?>"><?php echo bloginfo( "name" ); ?></a></h1>
 	</aside>
 
 	<div id="fh5co-main-content">
@@ -58,15 +59,26 @@
 			<div class="row">
 				<div class="col-md-6">
 					<ul id="fh5co-social">
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-instagram"></i></a></li>
-						<li><a href="#"><i class="icon-google-plus"></i></a></li>
-						<li><a href="#"><i class="icon-pinterest-square"></i></a></li>
+						
+
+						<!-- Showing SideBar start -->
+						<?php
+						   if(is_active_sidebar( "footer-right" )){
+						   	dynamic_sidebar( "footer-right" );
+						   }
+						?>
+						<!-- Showing SideBar end -->
+
 					</ul>
 				</div>
 				<div class="col-md-6 fh5co-copyright">
-					<p>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com" target="_blank">Unsplash</a></p>
+					<!-- Showing SideBar start -->
+						<?php
+						   if(is_active_sidebar( "footer-left" )){
+						   	dynamic_sidebar( "footer-left" );
+						   }
+						?>
+						<!-- Showing SideBar end -->
 				</div>
 			</div>
 		</div>
